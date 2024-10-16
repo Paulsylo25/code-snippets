@@ -1,0 +1,11 @@
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+   	var vState = g_form.getValue('state');
+		if (vState == '4')
+		g_form.setMandatory('assigned_to',true);
+	else
+		g_form.setMandatory('assigned_to',false);
+		g_form.setValue('assigned_to', g_user.userID);
+}
